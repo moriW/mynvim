@@ -54,6 +54,12 @@ noremap H 10h
 noremap J 10j
 noremap K 10k
 noremap L 10l
+
+inoremap <C-l> <right>
+inoremap <C-h> <left>
+inoremap <C-j> <down>
+inoremap <C-k> <up>
+
 noremap <LEADER>p "*p
 noremap <leader>b :ls<cr>:b<space>
 noremap <leader>t :set splitright<CR>:vsplit<CR>:terminal<CR>
@@ -123,7 +129,6 @@ Plug 'majutsushi/tagbar', { 'on': 'TagbarOpenAutoClose' }
 " Undo Tree
 Plug 'mbbill/undotree/'
 
-Plug 'folke/zen-mode.nvim'
 
 
 " Other visual enhancement
@@ -154,15 +159,15 @@ Plug 'scrooloose/nerdcommenter' " in <space>cc to comment a line
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'kana/vim-textobj-user'
 Plug 'fadein/vim-FIGlet'
-Plug 'EdenEast/nightfox.nvim'
+Plug 'joshdick/onedark.vim'
 Plug 'mhinz/vim-startify'
 
 
 
 call plug#end()
 
-let g:SnazzyTransparent = 1
-colorscheme nightfox
+colorscheme onedark
+
 
 
 " ===
@@ -175,7 +180,7 @@ noremap <C-t> :NERDTreeToggle<CR>
 " ==
 " == NERDTree-git
 " ==
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
