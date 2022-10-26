@@ -61,8 +61,8 @@ inoremap <C-j> <down>
 inoremap <C-k> <up>
 
 noremap <LEADER>p "*p
-noremap <leader>b :ls<cr>:b<space>
-noremap <leader>t :set splitright<CR>:vsplit<CR>:terminal<CR>
+noremap <LEADER>b :ls<cr>:b<space>
+" noremap <LEADER>t :set splitright<CR>:vsplit<CR>:terminal<CR>
 
 " copy
 noremap <LEADER>y "*y
@@ -159,17 +159,16 @@ Plug 'scrooloose/nerdcommenter' " in <space>cc to comment a line
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'kana/vim-textobj-user'
 Plug 'fadein/vim-FIGlet'
-Plug 'joshdick/onedark.vim'
 Plug 'mhinz/vim-startify'
+Plug 'cocopon/iceberg.vim'
 
-
+" Plug 'rakr/vim-one'
 
 call plug#end()
 
-colorscheme onedark
-
-
-
+" let g:airline_theme='one'
+colorscheme iceberg
+set background=dark
 " ===
 " === NERDTree
 " ===
@@ -222,13 +221,6 @@ let g:mkdp_page_title = '「${name}」'
 " === vim-table-mode
 " ===
 " map <LEADER>tm :TableModeToggle<CR>
-
-" ===
-" === Python-syntax
-" ===
-let g:python_highlight_all = 1
-" let g:python_slow_sync = 0
-
 
 " ===
 " === vim-indent-guide
@@ -333,4 +325,6 @@ let g:startify_custom_header = [
     \ '    \|__|     \|__|    \|_______|    \|__|\|__|    \|__|'
     \    ]
 
-autocmd VimEnter * NERDTreeToggle
+" autocmd VimEnter * NERDTreeToggle
+au BufWritePost *.go :silent !gofmt -w %
+

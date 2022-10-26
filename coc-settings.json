@@ -10,6 +10,7 @@
       ]
     }
   },
+  "diagnostic.checkCurrentLine": true,
   "pyright.enable":true,
   "go.enable": true
 }
